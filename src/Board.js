@@ -219,5 +219,3 @@ var makeEmptyBoardMatrix = function(n) {
     });
   });
 };
-
-makeEmptyBoardMatrix(4);

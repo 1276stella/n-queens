@@ -3,7 +3,7 @@ describe('solvers', function() {
 
   describe('findNRooksSolution()', function() {
 
-    it('finds a valid solution for n of 1-8', function() {
+    it('finds a valid solution for n of 1-9', function() {
       _.range(1, 9).map(function(n) {
         var solutionBoard = new Board(findNRooksSolution(n));
         var numPieces = _.reduce(solutionBoard.allRowsCopy(), function(memo, row) {
