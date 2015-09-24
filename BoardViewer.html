@@ -35,23 +35,23 @@
       // No need to worry about how this works
       
       window.displayBoard = function(matrix){
-        $('body').html(
+        $('body').append(
           new BoardView({
             model: new Board(matrix)
           }).render()
-        );
+        ).append("<p><p>");
       };
 
       $(function(){
 
         // This is a pre-baked solution for n-queens in the n = 4 case, rendered to the screen using our handy visualizer.
 
-        displayBoard([
-          [0, 1, 0, 0],
-          [0, 0, 0, 1],
-          [1, 0, 0, 0],
-          [0, 0, 1, 0]
-        ]);
+        // displayBoard([
+        //   [0, 1, 0, 0],
+        //   [0, 0, 0, 1],
+        //   [1, 0, 0, 0],
+        //   [0, 0, 1, 0]
+        // ]);
 
         // This will generate an empty board visualizer for n-queens for the passed-in value of n
         // (uncomment as desired)

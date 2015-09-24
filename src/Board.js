@@ -176,9 +176,9 @@
       var n = this.n();
       var counter = 0;
       var colIndex = majorDiagonalColumnIndexAtFirstRow;
-      var rowIndex = (colIndex > 0) ? 0 : -colIndex;
-      var end = (colIndex < 0) ? n : (n - colIndex);
-      for(rowIndex; rowIndex < end; rowIndex++, colIndex++) {
+      // var rowIndex = (colIndex > 0) ? 0 : -colIndex;
+      // var end = (colIndex < 0) ? n : (n - colIndex);
+      for(var rowIndex = 0; rowIndex < n; rowIndex++, colIndex++) {
         counter += this.getPiece(rowIndex, colIndex);
         if(counter >= 2) {
           return true;
@@ -207,9 +207,9 @@
       var n = this.n();
       var counter = 0;
       var colIndex = minorDiagonalColumnIndexAtFirstRow;
-      var rowIndex = (colIndex >= n) ? (colIndex - n + 1) : 0;
-      var end = (colIndex >= n) ? n : (colIndex + 1);
-      for(rowIndex; rowIndex < end; rowIndex++, colIndex--) {
+      // var rowIndex = (colIndex >= n) ? (colIndex - n + 1) : 0;
+      // var end = (colIndex >= n) ? n : (colIndex + 1);
+      for(var rowIndex = 0; rowIndex < n; rowIndex++, colIndex--) {
         counter += this.getPiece(rowIndex, colIndex);
         if(counter >= 2){
           return true;
