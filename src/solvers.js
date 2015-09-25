@@ -18,6 +18,7 @@
 // (If no solution, return an empty matrix.)
 window.findNRooksSolution = function(n) {
   var board = new Board({"n" : n});
+  var start = performance.now();
   function recurseSol(rowIndex){
     if(rowIndex>=n){
       return true;
@@ -36,8 +37,10 @@ window.findNRooksSolution = function(n) {
     return false;
   }
   recurseSol(0);
+  var end = performance.now();
+  console.log("findNRooksSolution took "+ (end-start) + "milliseconds to finish for a board of size "+n);
   board = board.allRowsCopy();
-  console.log('Single solution for ' + n + ' rooks:', JSON.stringify(board));
+  //console.log('Single solution for ' + n + ' rooks:', JSON.stringify(board));
   return board;
 };
 
@@ -46,6 +49,7 @@ window.findNRooksSolution = function(n) {
 // of them can attack each other.
 window.countNRooksSolutions = function(n) {
   var solutionCount = 0; // fixme
+  var start = performance.now();
   var board = new Board({"n" : n});
 
   function recurseSol(rowIndex) {
@@ -65,7 +69,9 @@ window.countNRooksSolutions = function(n) {
   }
 
   recurseSol(0);
-  console.log('Number of solutions for ' + n + ' rooks:', solutionCount);
+  var end = performance.now();
+  console.log("countNRooksSolution took "+ (end-start) + "milliseconds to finish for a board of size "+n);
+  //console.log('Number of solutions for ' + n + ' rooks:', solutionCount);
   return solutionCount;
 };
 
@@ -75,6 +81,7 @@ window.countNRooksSolutions = function(n) {
 // (If no solution, return an empty matrix.)
 window.findNQueensSolution = function(n) {
   var board = new Board({"n" : n});
+  var start = performance.now();
   function recurseSol(rowIndex){
     if(rowIndex>=n){
       return true;
@@ -96,6 +103,8 @@ window.findNQueensSolution = function(n) {
       return false;
     }
     recurseSol(0);
+    var end = performance.now();
+    console.log("findNQueensSolution took "+ (end-start) + "milliseconds to finish for a board of size "+n);
     board = board.allRowsCopy();
     console.log('Single solution for ' + n + ' queens:', JSON.stringify(board));
     return board;
@@ -107,7 +116,7 @@ window.findNQueensSolution = function(n) {
 window.countNQueensSolutions = function(n) {
   var solutionCount = 0; // fixme
   var board = new Board({"n" : n});
-
+  var start = performance.now();
   function recurseSol(rowIndex) {
     if(rowIndex >= n) {
       window.displayBoard(board.allRowsCopy());
@@ -127,6 +136,8 @@ window.countNQueensSolutions = function(n) {
 }
 
 recurseSol(0);
+var end = performance.now();
+console.log("countNQueensSolution took "+ (end-start) + "milliseconds to finish for a board of size "+n);
 console.log('Number of solutions for ' + n + ' queens:', solutionCount);
 return solutionCount;
 };
